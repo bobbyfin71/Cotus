@@ -1,0 +1,379 @@
+body{
+	font-family: SansSerif, serif;
+}
+a:link {
+	color: #FF6634;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #FF6634;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FF9D77;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #B32B00;
+	text-decoration: underline;
+}
+.navbar{
+	background-color: rgb(194, 17, 17);
+}
+
+.rfm-marquee-container:hover div {
+	animation-play-state: var(--pause-on-hover);
+}
+.rfm-marquee-container:active div {
+	animation-play-state: var(--pause-on-click);
+}
+
+.rfm-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.rfm-overlay::before, .rfm-overlay::after {
+	background: linear-gradient(to right, var(--gradient-color), rgba(255, 255, 255, 0));
+	content: "";
+	height: 100%;
+	position: absolute;
+	width: var(--gradient-width);
+	z-index: 2;
+	pointer-events: none;
+	touch-action: none;
+}
+#headline {
+	background-color: whitesmoke;
+	top: 0;
+	z-index: 1000;
+	height:30px;
+	position:fixed;
+	overflow:hidden;
+	width: 100%;
+
+}
+.navbar {
+	height: 100px; /* Adjust the height of the navbar */
+	position: fixed;
+	top: 30px; /* Position the navbar below the headline */
+	width: 100%;
+	z-index: 999; /* Ensure navbar appears below other content */
+}
+
+.nav-item{
+	font-size: xxx-large;
+	margin-right: 5em;
+}
+a{
+	color: white !important;
+}
+a:hover{
+	color: #FF9D77 !important;
+}
+.photobanner {
+	position:absolute;
+	top:0px;
+	left:0px;
+	overflow:hidden;
+	white-space: nowrap;
+	animation: bannermove 10s linear infinite;
+}
+
+
+
+.photobanner  {
+	margin: 0 0.5em
+}
+
+.aboutSection{
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+	padding-top: 10em;
+	background-color: #595ffc;
+	color: #B32B00;
+
+}
+.descSection{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+	padding-left: 5em;
+	padding-right: 5em;
+}
+
+.rfm-overlay::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}
+.rfm-overlay::before {
+	left: 0;
+	top: 0;
+}
+
+.rfm-marquee {
+	flex: 0 0 auto;
+	min-width: var(--min-width);
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+	animation-play-state: var(--play);
+	animation-delay: var(--delay);
+	animation-direction: var(--direction);
+}
+@keyframes scroll {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.rfm-initial-child-container {
+	flex: 0 0 auto;
+	display: flex;
+	min-width: auto;
+	flex-direction: row;
+	align-items: center;
+}
+
+.marquee {
+	width: 100%;
+	margin: 0 auto;
+	white-space: nowrap;
+	overflow: hidden;
+	position: absolute;
+}
+
+.marquee span {
+	display: inline-block;
+	padding-left: 100%;
+	animation: marquee 18s linear infinite;
+}
+
+.marquee2 span {
+	animation-delay: 9s;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+}
+
+.cardImage{
+	width: 100%;
+	height: 100%;
+}
+#carouselId{
+	width: 30em;
+	height: 30em;
+}
+
+.custom-shadow {
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5); /* Customize shadow color and intensity here */
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 576px) {
+	.navbar {
+		height: 60px !important; /* Adjust the height for smaller screens */
+		top: 60px; /* Position the navbar below the headline on smaller screens */
+	}
+
+	#headline {
+		top: 60px; /* Position the headline above navbar on smaller screens */
+	}
+}
+
+/* Styling for the about section */
+.title {
+	display: block;
+	font-size: xx-large;
+	text-align: center;
+}
+.portrait{
+	display: block;
+	width: auto;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	background-image: linear-gradient(to bottom, red, white, white, blue);
+}
+
+
+
+.font {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.aboutText {
+	font-size: 18px;
+	color: #333;
+}
+
+.highlight {
+	color: blue;
+}
+
+/* Style for the slider container */
+.slider-container {
+	position: relative;
+}
+
+/* Style for the slider */
+.slider {
+	position: absolute;
+	top: 100%; /* Position the slider below the button */
+	left: 0;
+	width: 120px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 5px;
+	display: none; /* Initially hide the slider */
+}
+
+/* Style for the slider input */
+.slider input[type=range] {
+	width: 100%;
+}
+
+/* Style for the newButton */
+#newButton {
+	font-size: 2rem; /* Set font size to 2rem for larger symbols */
+	background-color: transparent; /* Set background color to transparent */
+	border: none; /* Remove border */
+	cursor: pointer; /* Set cursor to pointer */
+	color: white; /* Set text color */
+	margin: 0; /* Reset margin */
+	padding: 0; /* Reset padding */
+}
+
+.cus-bg-primary{
+	background-color: #202c4c;
+}
+.cus-bg-secondary{
+	background-color: #254b89;
+}
+.cus-on-primary,.cus-on-secondary{
+	color: white;
+}
+.cus-bg-tertiary{
+	background-color: white;
+}
+.cus-on-tertiary{
+	color: black;
+}
+.title{
+	font-size: 6em;
+}
+
+@media (max-width: 576px) {
+    /* Styles for small screens */
+    .descSection {
+        display: block; /* Change display property to block for stacking */
+        text-align: center; /* Center-align content */
+    }
+
+    .flag_cat {
+        display: block; /* Ensure flag_cat takes full width on small screens */
+        margin: 0 auto 20px; /* Center flag_cat horizontally and add margin */
+    }
+
+    .desc {
+        font-size: xx-large;
+		
+    }
+}
+
+
+.description_body {
+	border-radius: 8px;
+	margin: 0 auto 20px;
+	padding: 1% 2% 2%;
+	width: fit-content;
+	height: fit-content;
+	font-size: xx-large;
+
+}
+
+
+@media (min-width: 576px) {
+    /* Styles for larger screens */
+    .descSection {
+        flex-direction: row; /* Revert back to row layout for larger screens */
+        justify-content: center; /* Center align items horizontally */
+    }
+
+    .flag_cat {
+        order: initial; /* Reset the order property */
+        margin-bottom: 0; /* Remove the margin-bottom */
+    }
+
+    .desc {
+        width: auto; /* Reset width to auto */
+		font-size: xx-large;
+		
+
+
+    }
+	.navbar-nav.mx-auto{
+		background-color: #202c4c;
+		width: relative;
+		
+	}
+}
+.flag_cat{
+	height: 100%;
+	width: auto;
+}
+
+.label{
+	font-size: xxx-large;
+	color: blue;
+}
+.address{
+	background-color: #202c4c;
+	border-radius: 8px;
+	margin: 0 auto 20px;
+	padding: .1em .2em .2em;
+	width: fit-content;
+	height: fit-content;
+	font-size: xx-large;
+}
+.vertical{
+	display: grid;
+}
+#contractText {
+	background-color: #21212180;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: whitesmoke;
+	margin-left: -.5% !important;
+	margin: 0 0 10px;
+	margin-left: 0px;
+	padding: 0 0 0 5px;
+	text-align: left;
+}
