@@ -217,6 +217,7 @@ a:hover{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	flex-wrap: wrap;
 	background-image: linear-gradient(to bottom, red, white, white, blue);
 }
