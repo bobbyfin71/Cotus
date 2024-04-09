@@ -40,11 +40,13 @@ function createCarouselCards(cards) {
 function populateCarousel() {
     const carouselInnerId = $("#carouselInnerId");
     const cards = [
-        { imgPath: 'images/cats/DOD_cat.JPG', caption: 'General Nips' },
-        { imgPath: 'images/cats/DOA_cat.JPG', caption: 'FarmLord Bitch' },
-        { imgPath: 'images/cats/DOJ_cat.JPG', caption: 'Judge Snyder' },
-        { imgPath: 'images/cats/Designer.png', caption: 'President Cat' },
-        { imgPath: 'images/cats/Designer (1).png', caption: 'President Cat' }
+        { imgPath: 'images/cats/DOD_cat.JPG', caption: 'General Nips of DOD' },
+        { imgPath: 'images/cats/DOA_cat.JPG', caption: 'Farmer Boots of DOA' },
+        { imgPath: 'images/cats/DOJ_cat.JPG', caption: 'Judge Snyder of DOJ' },
+        { imgPath: 'images/cats/DOE_cat.JPG', caption: 'Professor Kits of DOE' },
+        { imgPath: 'images/cats/DHS_cat.JPG', caption: 'Director Minnie of DHS' },
+        { imgPath: 'images/cats/VP_dog.JPG', caption: 'Vice President Chewy' },
+        { imgPath: 'images/cats/Designer.png', caption: 'Presidential Candidate Cotus' }
     ];
     carouselInnerId.append(createIndicators(cards.length, "carouselInnerId"));
     carouselInnerId.append(createCarouselCards(cards));
