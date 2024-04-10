@@ -50,17 +50,69 @@ function populateCarousel() {
     ];
     carouselInnerId.append(createIndicators(cards.length, "carouselInnerId"));
     carouselInnerId.append(createCarouselCards(cards));
+
+
     console.log("Kittens");
 }
+
+function getAddress(){
+    // Add copy-to-clipboard icon and cursor style change on hover
+    const contractAddressSpan = $('.address span');
+    const copyAddressText = $('.address p');
+    
+    // Function to copy text to clipboard
+    function copyToClipboard(text) {
+        const tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+    }
+
+    // Add click event listeners to copy the address to clipboard
+    contractAddressSpan.click(function() {
+        copyToClipboard($(this).text());
+        
+        // Provide visual feedback to the user
+        $(this).text("Copied!");
+        setTimeout(() => {
+            $(this).text("ECzqjyD5fyoimdpJSLNbCuJPS1pUWpZaxUgqPSNLfq8f"); // Restore the original address after 1 second
+        }, 1000);
+    });
+
+    copyAddressText.click(function() {
+        const addressText = $(this).next().text(); // Get the text of the following span (contract address)
+        copyToClipboard(addressText);
+        
+        // Provide visual feedback to the user
+        $(this).text("Copied!");
+        setTimeout(() => {
+            $(this).text("Contract Address 📋"); // Restore the original text after 1 second
+        }, 1000);
+    });
+
+    // Change cursor style of contract address span
+    contractAddressSpan.css('cursor', 'pointer');
+    copyAddressText.css('cursor', 'pointer');
+}
+
+
+
 
 
 
 function enableAudioSlider(){
     // Get the audio element
     var audio = document.getElementById("bgMusic");
+    
+    // Mute the audio by default
+    audio.muted = true;
+    
 
     // Get the new button element
     var newButton = document.getElementById("newButton");
+    newButton.innerHTML = '&#128263;'; // Megaphone symbol with cancel symbol
 
     // Add click event listener to new button to toggle mute state
     newButton.addEventListener("click", function() {
@@ -93,5 +145,7 @@ function enableAudioSlider(){
     });
 }
 
+
 populateCarousel()
 enableAudioSlider()
+getAddress()

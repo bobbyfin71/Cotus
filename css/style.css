@@ -207,8 +207,8 @@ a:hover{
 }
 .portrait{
 	display: block;
-	width: 25%;
-	height: auto;
+	width: fit-content;
+	height: fit-content;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -290,9 +290,67 @@ a:hover{
 .title{
 	font-size: 6em;
 }
-.desc{
-	font-size: xx-large;
+
+@media (max-width: 576px) {
+    /* Styles for small screens */
+    .descSection {
+        display: block; /* Change display property to block for stacking */
+        text-align: center; /* Center-align content */
+    }
+
+    .flag_cat {
+        display: block; /* Ensure flag_cat takes full width on small screens */
+        margin: 0 auto 20px; /* Center flag_cat horizontally and add margin */
+    }
+
+    .desc {
+        font-size: xx-large;
+		
+    }
 }
+
+
+.description_body {
+	border-radius: 8px;
+	margin: 0 auto 20px;
+	padding: 1% 2% 2%;
+	width: fit-content;
+	height: fit-content;
+	font-size: xx-large;
+
+}
+
+
+@media (min-width: 576px) {
+    /* Styles for larger screens */
+    .descSection {
+        flex-direction: row; /* Revert back to row layout for larger screens */
+        justify-content: center; /* Center align items horizontally */
+    }
+
+    .flag_cat {
+        order: initial; /* Reset the order property */
+        margin-bottom: 0; /* Remove the margin-bottom */
+    }
+
+    .desc {
+        width: auto; /* Reset width to auto */
+		font-size: xx-large;
+		
+
+
+    }
+	.navbar-nav.mx-auto{
+		background-color: #202c4c;
+		width: relative;
+		
+	}
+}
+.flag_cat{
+	height: 100%;
+	width:fit-content;
+}
+
 .label{
 	font-size: xxx-large;
 	color: blue;
@@ -303,6 +361,10 @@ a:hover{
 	margin: 0 auto 20px;
 	padding: .1em .2em .2em;
 	width: fit-content;
+	
+	height: fit-content;
+	font-size: xx-large;
+	
 }
 .vertical{
 	display: grid;
