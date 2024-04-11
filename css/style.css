@@ -380,3 +380,26 @@ a:hover{
 	padding: 0 0 0 5px;
 	text-align: left;
 }
+
+.Disclosure {
+    border: 2px solid #202c4c;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/* Roadmap styling */
+.roadmap {
+    margin-top: 30px;
+}
+.roadmap h3 {
+    margin-bottom: 10px;
+}
+.roadmap ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
